@@ -65,7 +65,7 @@ const EditPost = () => {
   const singlePostById = async () => {
     // console.log(id)
     try {
-      const { data } = await axios.get(`/api/post/${id}`);
+      const { data } = await axios.get(`https://mern-blog-server-five.vercel.app/api/post/${id}`);
       setTitle(data.post.title);
       setContent(data.post.content);
       setImagePreview(data.post.image.url);
@@ -83,7 +83,7 @@ const EditPost = () => {
 
   const updatePost = async (values) => {
     try {
-      const { data } = await axios.put(`/api/update/post/${id}`, values);
+      const { data } = await axios.put(`https://mern-blog-server-five.vercel.app/api/update/post/${id}`, values);
       if (data.success === true) {
         toast.success('post updated');
         navigate('/admin/dashboard')

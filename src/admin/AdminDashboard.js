@@ -17,7 +17,7 @@ const AdminDashboard = () => {
 
   const displayPost = async () => {
     try {
-      const { data } = await axios.get('/api/posts/show');
+      const { data } = await axios.get('https://mern-blog-server-five.vercel.app/api/posts/show');
       setPosts(data.posts);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
     // console.log(id)
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
-        const { data } = await axios.delete(`/api/delete/post/${id}`);
+        const { data } = await axios.delete(`https://mern-blog-server-five.vercel.app/api/delete/post/${id}`);
         if (data.success === true) {
           toast.success(data.message);
           displayPost();

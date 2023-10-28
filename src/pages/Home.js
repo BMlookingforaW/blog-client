@@ -26,7 +26,7 @@ const Home = () => {
   const showPosts = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get('/api/posts/show');
+      const { data } = await axios.get('https://mern-blog-server-five.vercel.app/api/posts/show');
       setPosts(data.posts);
       setLoading(false);
     } catch (error) {

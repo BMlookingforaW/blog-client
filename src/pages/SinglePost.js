@@ -53,7 +53,7 @@ const SinglePost = () => {
   const displaySinglePost = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get(`/api/post/${id}`);
+      const { data } = await axios.get(`https://mern-blog-server-five.vercel.app/api/post/${id}`);
       // console.log(data)
       setTitle(data.post.title);
       setContent(data.post.content);
@@ -83,7 +83,7 @@ const SinglePost = () => {
   const addComment = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(`/api/comment/post/${id}`, { comment });
+      const { data } = await axios.put(`https://mern-blog-server-five.vercel.app/api/comment/post/${id}`, { comment });
       if (data.success === true) {
         setComment('');
         toast.success("comment added");

@@ -54,7 +54,7 @@ const CreatePost = () => {
 
   const createNewPost = async (values) => {
     try {
-      const { data } = await axios.post('/api/post/create', values);
+      const { data } = await axios.post('https://mern-blog-server-five.vercel.app/api/post/create', values);
       toast.success('post created');
     } catch (error) {
       console.log(error);

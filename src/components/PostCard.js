@@ -39,7 +39,7 @@ const PostCard = ({
     //add like
     const addLike = async () => {
         try {
-            const { data } = await axios.put(`/api/addlike/post/${id}`);
+            const { data } = await axios.put(`https://mern-blog-server-five.vercel.app/api/addlike/post/${id}`);
             //console.log("likes", data.post);
             if (data.success == true) {
                 showPosts();
@@ -56,7 +56,7 @@ const PostCard = ({
     //remove like
     const removeLike = async () => {
         try {
-            const { data } = await axios.put(`/api/removelike/post/${id}`);
+            const { data } = await axios.put(`https://mern-blog-server-five.vercel.app/api/removelike/post/${id}`);
             //console.log("remove likes", data.post);
             if (data.success == true) {
                 showPosts();
